@@ -1,3 +1,4 @@
+// email autorizzate
 const emailAutorizzate = [
     "utente1@scl.com",
     "utente2@scl.com",
@@ -11,11 +12,11 @@ const emailAutorizzate = [
     const emailUtente = document.getElementById('emailInput').value;
     const resultDiv = document.getElementById('result');
     let accessoConsentito = false;
-
+// ciclo per controllare tutti gli array
     for (let i = 0; i < emailAutorizzate.length; i++) {
         if (emailUtente === emailAutorizzate[i]) {
             accessoConsentito = true;
-            break;
+            break;//questo serve per stoppare il ciclo
         }
     }
 
