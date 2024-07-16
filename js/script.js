@@ -8,12 +8,18 @@ const emailAutorizzate = [
   ];
   
   function controllaAccesso() {
-    // Chiedi all'utente la sua email
     const emailUtente = document.getElementById('emailInput').value;
     const resultDiv = document.getElementById('result');
-  
-    // Controlla se l'email è nella lista delle email autorizzate
-    if (emailAutorizzate.includes(emailUtente)) {
+    let accessoConsentito = false;
+
+    for (let i = 0; i < emailAutorizzate.length; i++) {
+        if (emailUtente === emailAutorizzate[i]) {
+            accessoConsentito = true;
+            break;
+        }
+    }
+
+    if (accessoConsentito) {
         resultDiv.textContent = "Accesso consentito. Benvenuto!";
         resultDiv.style.color = "green";
     } else {
